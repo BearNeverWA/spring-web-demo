@@ -7,11 +7,6 @@ import org.springframework.data.domain.PageRequest;
 /**
  * Created by Administrator on 2017/7/7.
  */
-public class TestService {
-
-    @Autowired
-    private TestRepository testRepository;
-    public Page<Test> getTest(int pageNumber,int pageSize){
-        PageRequest request=buildPageRequest
-    }
+public interface TestQueryService{
+    Page<Test> findBookNoCriteria(Integer page,Integer size);
 }

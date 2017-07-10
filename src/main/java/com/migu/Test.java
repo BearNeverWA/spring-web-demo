@@ -1,20 +1,30 @@
 package com.migu;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Administrator on 2017/7/7.
  */
 @Entity
+@Table(name = "test")
 public class Test {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false)
     private Integer id;
+
+    @Column(nullable = false,name = "name")
     private String name;
+
+    @Column(nullable = false,name = "age")
     private Integer age;
+
+    public Test(Integer id,String name,Integer age){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+    }
 
     public Test() {
     }
